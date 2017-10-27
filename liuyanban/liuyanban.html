@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		list-style: none;
+		outline: none;
+
+	}
+	fieldset{
+		width: 550px;
+		height: 300px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	textarea{
+		width: 500px;
+		height: 200px;
+		display: block;
+		resize: none;
+		margin: 0 auto;
+		margin-bottom: 9px;
+
+		
+	}
+	input{
+		float: right;
+		margin-left: 5px;
+	}
+	#myname{
+		width: 500px;
+		height: 25px;
+		display: block;
+		margin-bottom: 6px;
+		float: left;
+		margin-left: 22px;
+	}
+	ul.box{
+		width: 590px;
+		height: auto;
+		padding: 5px;
+		border: 1px solid black;
+		margin: 0 auto;
+		display: none;
+	}
+	.box>li{
+		width: 100%;
+		height: auto;
+		padding: 8px;
+		box-sizing: border-box;
+		margin-bottom: 5px;
+		border-bottom:3px solid green;
+		
+
+	}
+	.box>li>img{
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		
+	}
+	.center{
+		height: 50px;
+		position: relative;
+		margin-left: 60px;
+		
+	}
+	.ttext{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.time{
+		font-size: 12px;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+	}
+	</style>
+</head>
+<body>
+	<fieldset>
+	<legend>留言板</legend>
+	<input type="text" id="myname" placeholder="your name">
+	<textarea name="" id="" cols="30" rows="10" placeholder="请输入留言" maxlength="200"></textarea>
+	<input type="submit" id="sub" name="">
+	<h6></h6>
+	</fieldset>
+	<ul class="box">
+		<!-- <li>
+			<img src="b1.jpg" alt="">
+			<div class="center">
+				<div class="name">zhangsan</div>
+				
+				<div class="ttext">zhangsandsfdsafafa</div>
+			</div>
+		</li> -->
+	</ul>
+
+</body>
+</html>
+<script>
+	let mydate=new Date();
+	let s=mydate.getFullYear();
+	let y=mydate.getMonth()+1;
+	let w=mydate.getDate();
+	let strw=s+'-'+y+'-'+w
+	let texts=document.querySelector('textarea');
+	let h6=document.querySelector('h6');
+	let box=document.querySelector('.box');
+	let sub=document.querySelector('#sub');
+	let divs=document.querySelector('div');
+	let namee=document.querySelector('#myname');
+	let str=texts.innerHTML;
+	texts.onkeyup=function(){
+		let str=this.value;
+		if(str.length>=200){
+			alert('字数超出最大值');
+		}
+		h6.innerHTML=`剩余${200-str.length}/200个字`;
+		
+	}
+	
+	
+	texts.onkeydown=function(e){
+		if(e.keyCode==13){
+			if(texts.value==''){
+			alert('请输入内容');
+			return;
+		}
+		box.style.display='block';
+		box.innerHTML+=`<li>
+			<img src="b1.jpg" alt="">
+			<div class="center">
+				<div class="name">${namee.value==''?'游客':namee.value}</div>
+				<div class="time">${strw}</div>
+				<div class="ttext">${texts.value}</div>
+			</div>
+		</li>`;
+		texts.value=null;
+		namee.value=null;
+		}
+	}
+	sub.onclick=function(){
+		let t=texts.value.trim();
+		if(t==''){
+			alert('请输入内容');
+			return;
+		}
+		box.style.display='block';
+		box.innerHTML+=`<li>
+			<img src="b1.jpg" alt="">
+			<div class="center">
+				<div class="name">${namee.value==''?'游客':namee.value}</div>
+				<div class="time">${strw}</div>
+				<div class="ttext">${texts.value}</div>
+			</div>
+		</li>`;
+		texts.value=null;
+		namee.value=null;
+				
+	}
+	// box.onmouseover=function(e){
+	// 	if(e.target.nodeName=='LI'){
+	// 		console.log(e.target)
+	// 		e.target.style.background='rgba(0,0,0,0.5)';
+
+	// 	}
+	// }
+	box.onmouseover=function(e){
+		let element=e.target;
+		if(element.nodeName=='LI'){
+			element.onmouseover=function(e){
+				if(e){
+					element.style.background='rgba(0,0,0,0.3)';
+				}
+				
+			}
+			
+			}
+			
+		}
+	box.onmouseout=function(e){
+		let element=e.target;
+		if(element.nodeName=='LI'){
+			element.onmouseout=function(e){
+				if(e){
+					element.style.background='rgba(0,0,0,0)';
+				}
+				
+			}
+			
+			}
+			
+		}
+</script>
