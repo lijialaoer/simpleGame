@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+<body>
+	<main>
+		<ul class="tools">
+			<li id="line" class="iconfont icon-xian-  tool" active='true' title="直线"></li>
+			<li id="dash" class="iconfont icon-xuxian tool" title="虚线"></li>
+			<li id="rect" class="iconfont icon-juxing tool" title="矩形"></li>
+			<li id="pencil" class="iconfont icon-huaxian tool" title="铅笔"></li>
+			<li id="circle" class="iconfont icon-yuan tool" title="圆"></li>
+			<li id="poly" class="iconfont icon-duobianxing tool" title="多边形"></li>
+			<li id="angle" class="iconfont icon-duobianxing1 tool" title="多角形"></li>
+
+			<div class="bgh"></div>
+
+			<li id="styles" class="iconfont icon-miaobian" title="描边"></li>
+			<li id="colors">
+				<input type="color">
+			</li>
+			<li id="stylef" class="iconfont icon-tianchong" title="填充"></li>
+			<li id="colorf">
+				<input type="color">
+			</li>
+
+			<div class="bgh"></div>
+
+			<li id="eraser" class="iconfont icon-xiangpi" title="橡皮"></li>
+			<li id="clip" class="iconfont icon-caijian" title="裁剪"></li>
+			<li id="font" class="iconfont icon-wenben-copy" title="文字"></li>
+			
+		</ul>
+		<div class="right">
+			<ul class="top">
+				<li id='cdelete'>撤销</li>
+				<li id='neww'>新建</li>
+				<li id='revrese'>反向</li>
+				<li id='clear'>清空</li>
+
+				<a id='ssave' href="">保存</a>
+				 <span>线宽:</span><select name="cars" id="linew">  
+		            <option value="1" >1</option>   
+		           	<option value="5" selected>5</option>  
+		           	<option value="10" >10</option>   
+		            <option value="15" >15</option>     
+        		</select>   
+				
+				<span>端点:</span><select name="car" id="linecap">  
+		            <option value="round" >圆角</option>   
+		           	<option value="square" selected>方角</option>  
+		           	<option value="butt" >默认</option>      
+        		</select> 
+			</ul>
+			<div class="bottom">
+				<canvas  width="800" height="500"></canvas>
+				<div class="clipp"></div>
+				<div class="earser"></div>
+				<div class="opt"></div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+<script src="js/pinter.js"></script>
+<script src="js/index.js"></script>

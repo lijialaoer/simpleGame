@@ -1,0 +1,165 @@
+*{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+$w:600px;
+@mixin border{
+	border-radius:50%;
+}
+@mixin margin{
+	margin-left:auto;
+	margin-right:auto;
+}
+@mixin center{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+@mixin center1{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-$w/2;
+	margin-left:-$w/2;
+
+}
+html,body{
+	width:100%;
+	height:100%;
+	background:#6d6a6a;
+}
+.chessboard{
+	width:$w;
+	height:$w;
+	background:rgba(209,232,208,0.5);
+	@include center1;
+	position:relative;
+	li.qizi{
+		width:$w/15-10px;
+		height:$w/15-10px;
+		position:relative;
+		z-index:99;
+		margin:5px;
+		float:left;
+		@include border;
+
+	}
+	div{
+		width:$w - $w/15;
+		height:1px;
+		@include margin;
+		position:absolute;
+
+	}
+	span{
+		height:$w - $w/15;
+		width:1px;
+		margin-top:auto;
+		margin-bottom:auto;
+		position:absolute;
+	}
+	i{
+		width:$w/60;
+		height:$w/60;
+		@include border;
+		position:absolute;
+		animation:luo 1.5s ease forwards;
+		&:nth-of-type(1){
+			top:3.5*$w/15;
+			left:3.5*$w/15;
+		}
+		&:nth-of-type(2){
+			top:3.5*$w/15;
+			left:11.5*$w/15;
+		}
+		&:nth-of-type(3){
+			top:7.5*$w/15;
+			left:7.5*$w/15;
+		}
+		&:nth-of-type(4){
+			top:11.5*$w/15;
+			left:3.5*$w/15;
+		}
+		&:nth-of-type(5){
+			top:11.5*$w/15;
+			left:11.5*$w/15;
+		}
+		@for $j from 0 through 4{
+			&:nth-of-type(#{$j}){
+				animation-delay:$j*0.1s;
+			}
+		}
+	}
+	
+	@for $i from 0 through 14{
+		div:nth-of-type(#{$i+1}){
+			left:$w/30;
+			top:$w/30+$i*$w/15;
+			animation:topp  0.3s  ease $i*0.1s forwards;
+		}
+		span:nth-of-type(#{$i+1}){
+			top:$w/30;
+			left:$w/30+$i*$w/15;
+			animation:leftt  0.3s  ease $i*0.1s forwards;
+		}
+	}
+	
+}
+
+.hei{
+	background:black;
+	}
+.bai{
+	background:#fff;
+	}
+
+button{
+	border:none;
+	padding:5px;
+	display:block;
+	background:#ccc;
+	color:#000;
+	font:14px sans-serif;
+	text-align:center;
+	position:absolute;
+	top:30px;
+	left:30px;
+
+	&:nth-of-type(2){
+		top:90px;
+	}
+	&:nth-of-type(3){
+		top:150px;
+	}
+}
+@keyframes topp{
+	0%{
+		transform:translate3d(0,20px,0);
+	}
+	100%{
+		transform:translate3d(0,0,0);
+		background:#000;
+	}
+}
+@keyframes luo{
+	0%{
+		transform:translate3d(-800px,-800px,0);
+	}
+	100%{
+		transform:translate3d(-50%,-50%,0);
+		background:#000;
+	}
+}
+@keyframes leftt{
+	0%{
+		transform:translate3d(20px,0,0);
+	}
+	100%{
+		transform:translate3d(0,0,0);
+		background:#000;
+	}
+}

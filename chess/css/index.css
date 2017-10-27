@@ -1,0 +1,234 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #6d6a6a; }
+
+.chessboard {
+  width: 600px;
+  height: 600px;
+  background: rgba(209, 232, 208, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -300px;
+  margin-left: -300px;
+  position: relative; }
+  .chessboard li.qizi {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 99;
+    margin: 5px;
+    float: left;
+    border-radius: 50%; }
+  .chessboard div {
+    width: 560px;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute; }
+  .chessboard span {
+    height: 560px;
+    width: 1px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute; }
+  .chessboard i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    animation: luo 1.5s ease forwards; }
+    .chessboard i:nth-of-type(1) {
+      top: 140px;
+      left: 140px; }
+    .chessboard i:nth-of-type(2) {
+      top: 140px;
+      left: 460px; }
+    .chessboard i:nth-of-type(3) {
+      top: 300px;
+      left: 300px; }
+    .chessboard i:nth-of-type(4) {
+      top: 460px;
+      left: 140px; }
+    .chessboard i:nth-of-type(5) {
+      top: 460px;
+      left: 460px; }
+    .chessboard i:nth-of-type(0) {
+      animation-delay: 0s; }
+    .chessboard i:nth-of-type(1) {
+      animation-delay: 0.1s; }
+    .chessboard i:nth-of-type(2) {
+      animation-delay: 0.2s; }
+    .chessboard i:nth-of-type(3) {
+      animation-delay: 0.3s; }
+    .chessboard i:nth-of-type(4) {
+      animation-delay: 0.4s; }
+  .chessboard div:nth-of-type(1) {
+    left: 20px;
+    top: 20px;
+    animation: topp 0.3s ease 0s forwards; }
+  .chessboard span:nth-of-type(1) {
+    top: 20px;
+    left: 20px;
+    animation: leftt 0.3s ease 0s forwards; }
+  .chessboard div:nth-of-type(2) {
+    left: 20px;
+    top: 60px;
+    animation: topp 0.3s ease 0.1s forwards; }
+  .chessboard span:nth-of-type(2) {
+    top: 20px;
+    left: 60px;
+    animation: leftt 0.3s ease 0.1s forwards; }
+  .chessboard div:nth-of-type(3) {
+    left: 20px;
+    top: 100px;
+    animation: topp 0.3s ease 0.2s forwards; }
+  .chessboard span:nth-of-type(3) {
+    top: 20px;
+    left: 100px;
+    animation: leftt 0.3s ease 0.2s forwards; }
+  .chessboard div:nth-of-type(4) {
+    left: 20px;
+    top: 140px;
+    animation: topp 0.3s ease 0.3s forwards; }
+  .chessboard span:nth-of-type(4) {
+    top: 20px;
+    left: 140px;
+    animation: leftt 0.3s ease 0.3s forwards; }
+  .chessboard div:nth-of-type(5) {
+    left: 20px;
+    top: 180px;
+    animation: topp 0.3s ease 0.4s forwards; }
+  .chessboard span:nth-of-type(5) {
+    top: 20px;
+    left: 180px;
+    animation: leftt 0.3s ease 0.4s forwards; }
+  .chessboard div:nth-of-type(6) {
+    left: 20px;
+    top: 220px;
+    animation: topp 0.3s ease 0.5s forwards; }
+  .chessboard span:nth-of-type(6) {
+    top: 20px;
+    left: 220px;
+    animation: leftt 0.3s ease 0.5s forwards; }
+  .chessboard div:nth-of-type(7) {
+    left: 20px;
+    top: 260px;
+    animation: topp 0.3s ease 0.6s forwards; }
+  .chessboard span:nth-of-type(7) {
+    top: 20px;
+    left: 260px;
+    animation: leftt 0.3s ease 0.6s forwards; }
+  .chessboard div:nth-of-type(8) {
+    left: 20px;
+    top: 300px;
+    animation: topp 0.3s ease 0.7s forwards; }
+  .chessboard span:nth-of-type(8) {
+    top: 20px;
+    left: 300px;
+    animation: leftt 0.3s ease 0.7s forwards; }
+  .chessboard div:nth-of-type(9) {
+    left: 20px;
+    top: 340px;
+    animation: topp 0.3s ease 0.8s forwards; }
+  .chessboard span:nth-of-type(9) {
+    top: 20px;
+    left: 340px;
+    animation: leftt 0.3s ease 0.8s forwards; }
+  .chessboard div:nth-of-type(10) {
+    left: 20px;
+    top: 380px;
+    animation: topp 0.3s ease 0.9s forwards; }
+  .chessboard span:nth-of-type(10) {
+    top: 20px;
+    left: 380px;
+    animation: leftt 0.3s ease 0.9s forwards; }
+  .chessboard div:nth-of-type(11) {
+    left: 20px;
+    top: 420px;
+    animation: topp 0.3s ease 1s forwards; }
+  .chessboard span:nth-of-type(11) {
+    top: 20px;
+    left: 420px;
+    animation: leftt 0.3s ease 1s forwards; }
+  .chessboard div:nth-of-type(12) {
+    left: 20px;
+    top: 460px;
+    animation: topp 0.3s ease 1.1s forwards; }
+  .chessboard span:nth-of-type(12) {
+    top: 20px;
+    left: 460px;
+    animation: leftt 0.3s ease 1.1s forwards; }
+  .chessboard div:nth-of-type(13) {
+    left: 20px;
+    top: 500px;
+    animation: topp 0.3s ease 1.2s forwards; }
+  .chessboard span:nth-of-type(13) {
+    top: 20px;
+    left: 500px;
+    animation: leftt 0.3s ease 1.2s forwards; }
+  .chessboard div:nth-of-type(14) {
+    left: 20px;
+    top: 540px;
+    animation: topp 0.3s ease 1.3s forwards; }
+  .chessboard span:nth-of-type(14) {
+    top: 20px;
+    left: 540px;
+    animation: leftt 0.3s ease 1.3s forwards; }
+  .chessboard div:nth-of-type(15) {
+    left: 20px;
+    top: 580px;
+    animation: topp 0.3s ease 1.4s forwards; }
+  .chessboard span:nth-of-type(15) {
+    top: 20px;
+    left: 580px;
+    animation: leftt 0.3s ease 1.4s forwards; }
+
+.hei {
+  background: black; }
+
+.bai {
+  background: #fff; }
+
+button {
+  border: none;
+  padding: 5px;
+  display: block;
+  background: #ccc;
+  color: #000;
+  font: 14px sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 30px;
+  left: 30px; }
+  button:nth-of-type(2) {
+    top: 90px; }
+  button:nth-of-type(3) {
+    top: 150px; }
+
+@keyframes topp {
+  0% {
+    transform: translate3d(0, 20px, 0); }
+  100% {
+    transform: translate3d(0, 0, 0);
+    background: #000; } }
+@keyframes luo {
+  0% {
+    transform: translate3d(-800px, -800px, 0); }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+    background: #000; } }
+@keyframes leftt {
+  0% {
+    transform: translate3d(20px, 0, 0); }
+  100% {
+    transform: translate3d(0, 0, 0);
+    background: #000; } }
+
+/*# sourceMappingURL=index.css.map */

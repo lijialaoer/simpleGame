@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="index.js"></script>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	html,body{
+		width: 100%;
+		height: 100%;
+		background: url('img/bgg.jpg') no-repeat center;
+		background-size: 100% 100%;
+		/* background: #e8d1d1; */
+
+	}
+	.desk{
+		width: 700px;
+		height: 650px;
+		margin: 0 auto;
+		position: relative;
+
+	}
+	.face{
+		width:90px;
+		height: 130px;
+		margin-right: 10px;
+		position: absolute;
+		top: 0;
+		left: 300px;
+		border-radius: 3px;
+		background-color: #fff;
+		background-position: center;
+		background-size: 105% 105%;
+		opacity: 0;
+
+
+	}
+	button{
+		width: 50px;
+		height: 30px;
+		background: #fff;
+		text-align: center;
+		line-height: 30px;
+		font-size: 30px;
+		color: #000;
+		position: absolute;
+		bottom: 85px;
+		left: calc(50% - 25px);
+	}
+	button:last-of-type{
+		bottom:35px;
+	}
+</style>
+<body>
+	<div class="desk">
+		<!-- <button>&gt</button> -->
+		<button class="right">&gt</button>
+		<button class="left">&lt</button>
+	</div>
+</body>
+</html>
