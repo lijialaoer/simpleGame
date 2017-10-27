@@ -2,7 +2,7 @@
 * @Author: lenovo
 * @Date:   2017-10-26 10:11:30
 * @Last Modified by:   lenovo
-* @Last Modified time: 2017-10-27 08:43:56
+* @Last Modified time: 2017-10-27 09:52:29
 */
 $(function(){
 	let ul=$('ul');
@@ -17,11 +17,13 @@ $(function(){
  		$('<li class="qizi">').appendTo(ul).prop('id',`${i}-${j}`).data('pos',{i,j});
  	}	
  }
-
 $('button.man').on('click',function(){
+	alert(1)
 	ren();
 })
-$('button.copmuter').on('click',function(){
+
+$('button.computer').on('click',function(){
+	console.log(1)
 	com();
 })
 $('button.rev').on('click',function(){
